@@ -1,0 +1,18 @@
+        .landing_card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .landing_card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .landing_card:hover {
+            transform: scale(1.03);
+            background-color: lightskyblue;
+        }

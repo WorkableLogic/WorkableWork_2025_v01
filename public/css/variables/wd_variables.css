@@ -1,0 +1,59 @@
+/* 
+ * wd_variables.css
+ * Additional variables for authenticated pages
+ * Extends public variables with app-specific values
+ */
+
+:root {
+    /* Table-specific colors */
+    --table-header-bg: var(--brand-primary);
+    --table-header-text: var(--gray-100);
+    --table-row-hover: var(--highlight-yellow);
+    --wd-hover-color: var(--highlight-yellow);
+    --table-border: var(--gray-300);
+    --table-stripe-bg: var(--gray-100);
+    
+    /* Action colors */
+    --action-view: var(--brand-secondary);
+    --action-edit: var(--highlight-green);
+    --action-delete: var(--highlight-red);
+    
+    /* Form elements */
+    --input-border: var(--gray-400);
+    --input-focus-border: var(--brand-accent);
+    --input-focus-shadow: rgba(87, 201, 232, 0.25);
+    
+    /* Data display */
+    --data-positive: var(--success);
+    --data-negative: var(--danger);
+    --data-neutral: var(--gray-700);
+    
+    /* Layout - App specific */
+    --header-main-height: 50px;
+    --header-sub-height: 35px;
+    --sidebar-width: 200px;
+    --footer-height: 50px;
+    --min-window-width: 1024px;
+    --max-window-height: 100vh;
+    
+    /* Z-index layers */
+    --z-sticky-header: 100;
+    --z-tooltip: 200;
+    --z-modal: 300;
+    
+    /* Table dimensions */
+    --table-cell-padding: 0.25rem;
+    --table-header-height: 40px;
+    --table-row-height: 30px;
+    --table-action-column-width: 120px;
+    
+    /* Tooltips */
+    --tooltip-bg: var(--gray-900);
+    --tooltip-text: var(--gray-100);
+    --tooltip-arrow-size: 6px;
+    
+    /* Icons */
+    --icon-size-sm: 14px;
+    --icon-size-md: 18px;
+    --icon-size-lg: 24px;
+}

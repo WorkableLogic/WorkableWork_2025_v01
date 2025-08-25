@@ -1,0 +1,313 @@
+/* border-box fix */
+html {
+  box-sizing: border-box;
+   font-size: 15px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  line-height: 1.0;
+
+}
+
+
+/* Add padding to all of the .container child elements */
+.container > * {
+  padding: 2px;
+}
+
+
+
+/* PUBLIC PAGES GRID STYLES */
+
+.container_public {
+  color: black;
+  font-family: helvetica, arial, sans-serif;
+  /*font-family: 'Raleway', sans-serif;*/
+  font-weight: 300;   
+  
+   max-width: min(1600px, 95%); 
+   min-height: min(95vh, 95%);
+   margin: 0 auto;
+
+    
+   
+   display: grid;
+   grid-template-columns: repeat(4, minmax(0, 1fr));
+   grid-template-rows: 75px 1.5fr 1fr 50px;
+   gap: 15px;
+}
+
+
+.wd_grid_public_head1  {
+  grid-column: 1 / 3;
+  grid-row: 1/2;
+
+  font-size: 1.0rem;   
+   background-color: hsla(205,50%,95%,0.90); 
+   
+   padding: 15px;
+   
+}
+
+.wd_grid_public_head_info  {
+  
+  grid-column: 3 / 4;
+  grid-row: 1/2;
+  
+  background-color: hsla(205, 50%, 95%, 0.8);
+  padding: 15px;
+  align-content: center;
+}
+
+.wd_grid_public_head1_right  {
+  
+  grid-column: 4 / 5;
+  grid-row: 1/2;
+  
+  background-color: hsla(205, 50%, 95%, 0.8);
+  padding: 15px;
+  align-content: center;
+}
+
+
+
+.wd_grid_public_body_upper  {
+  grid-column: 1 / 5;
+  grid-row: 2/3;
+
+  font-size: 1.0rem;   
+  background-color: hsla(205, 50%, 95%, 0.8); 
+   
+}
+
+
+.wd_grid_public_body_left  {
+  grid-column: 1 / 3;
+  grid-row: 3/4;
+
+  font-size: 1.0rem;   
+  background-color: hsla(205,50%,50%,50%);
+   
+}
+
+
+.wd_grid_public_body_right  {
+  grid-column: 3 / 5;
+  grid-row: 3/4;
+
+  font-size: 1.0rem;   
+  background-color: hsla(205,50%,50%,50%);   
+
+}
+
+
+.wd_grid_public_footer  {
+  grid-column: 1 / 5;
+  grid-row: 4/5;
+
+  font-size: 1.0rem;   
+   background-color: hsla(205,50%,48%,1.00); 
+   
+
+}
+
+
+.img_grid_public_body {
+    
+opacity: 90%;
+z-index: 5;
+width: 150px;
+height: 150px;
+
+}
+
+
+/** PRIVATE AND DATA PAGES GRID STYLES **/
+
+.wd-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "locent menu"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-rows: 50px 35px 1fr 50px;
+    
+    max-width: min(1800px, 98%); 
+    min-height: min(98vh, 98%);
+    margin: 0 auto;
+
+    gap: 7px;
+
+    background: var(--gray-100);
+
+}
+
+.wd-main {
+    grid-area: main;
+    padding: var(--spacing-xs);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;  /* This is crucial for grid layouts */
+    width: 100%;
+    overflow: auto;
+}
+
+#grid_data_sub_param {
+    /* flex: 0 0 auto; */
+    font-size: 0.85rem; /* Adjusted for better readability */
+}
+
+#grid_data_sub_crit {
+    flex: 0 0 auto;
+}
+
+/* Data Display Sections */
+#grid_data_sub_param {
+    background: white;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+#grid_data_sub_crit {
+    background: var(--gray-300);
+    padding: var(--spacing-sm) var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+    font-weight: var(--font-weight-medium);
+}
+
+#grid_data_sub_foot {
+    background: var(--brand-primary);
+    color: white;
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    font-weight: var(--font-weight-medium);
+    position: sticky;
+    bottom: 0;
+    z-index: var(--z-sticky-header);
+    box-shadow: var(--shadow-md);
+}
+
+
+
+
+/* Location Entity Header */
+#grid_data_locent {
+    grid-area: locent;
+    background: var(--gray-500);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-weight: var(--font-weight-medium);
+    color: var(--gray-900);
+    border-radius: var(--border-radius-sm);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--gray-300);
+}
+
+/* Menu Area */
+#grid_data_locmenu {
+    grid-area: menu;
+    background: var(--gray-200);
+    padding: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    border-bottom: 1px solid var(--gray-300);
+    width: 100%;
+}
+
+
+/* wd-main-sub-grid-1
+  This is a sub-grid for the main content area 
+  Initial purpose, edit menu with recipe
+  menu on left side, full vertical, with right side having two sections for menu and commodity list
+  */
+
+.wd-grid-work-list-parent-child-action {
+    display: grid;
+    grid-template-areas:
+        "list parent parent"
+        "list parent parent"
+        "list parent parent"
+        "list child child"
+        "list child child"
+        "list child child"
+        "list child child"
+        "list action action"
+        "list action action";
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width:inherit;
+    max-height: 85vh;
+    margin: 0 auto;
+
+    gap: 4px;
+
+    background: var(--gray-100);
+
+}
+
+.wd-grid-work-list {
+    grid-area: list;
+    padding: var(--spacing-xs);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;  /* This is crucial for grid layouts */
+    width: 100%;
+    overflow: auto;
+    background-color: var(--gray-100);
+}
+
+.wd-grid-work-parent {
+    grid-area: parent;
+    padding: var(--spacing-xs);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;  /* This is crucial for grid layouts */
+    width: 100%;
+    overflow: auto;
+    background-color: var(--gray-300);
+}
+
+.wd-grid-work-child {
+    grid-area: child;
+    padding: var(--spacing-xs);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;  /* This is crucial for grid layouts */
+    width: 100%;
+    overflow: auto;
+    background-color: var(--gray-500);
+}
+
+.wd-grid-work-action {
+    grid-area: action;
+    padding: var(--spacing-xs);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;  /* This is crucial for grid layouts */
+    width: 100%;
+    overflow: auto;
+    background-color: var(--gray-500);
+}
+
+
+/* Grid Utilities */
+.wd-grid {
+    display: grid;
+    gap: var(--grid-gap);
+}
+
+.wd-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.wd-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.wd-grid-4 { grid-template-columns: repeat(4, 1fr); }

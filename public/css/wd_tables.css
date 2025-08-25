@@ -1,0 +1,224 @@
+/* 
+ * wd_tables.css
+ * Styles for data tables in authenticated pages
+ * Features: sticky headers, sortable columns, hover effects, action buttons
+ */
+
+/* Table Container */
+.wd-table-container {
+    position: relative;
+    width: 100%;
+    overflow-y: scroll;
+    /* height: calc(100vh - var(--header-height) - var(--footer-height) - 100px); */
+    max-height:62vh;
+    min-height:50vh;
+
+}
+
+
+.wd-table-container_short {
+    position: relative;
+    width: 96%;
+    overflow-y: scroll;
+    margin: var(--spacing-md) auto;
+
+}
+
+
+
+/* Base Table Styles */
+.wd-table {
+    width: 99%;
+    margin:auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    font-size: var(--font-size-sm);
+}
+
+/* Sticky Header */
+.wd-table thead {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky-header);
+    background: var(--table-header-bg);
+}
+
+.wd-table th {
+    padding: var(--table-cell-padding);
+    color: var(--table-header-text);
+    font-weight: var(--font-weight-medium);
+    text-align: left;
+    white-space: nowrap;
+    height: var(--table-header-height);
+    border-bottom: 2px solid var(--table-border);
+}
+
+/* Sortable Headers */
+.wd-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    padding-right: calc(var(--table-cell-padding) * 2);
+    position: relative;
+}
+
+.wd-table th.sortable::after {
+    content: '⇅';
+    position: absolute;
+    right: var(--table-cell-padding);
+    color: var(--table-header-text);
+    opacity: 0.5;
+}
+
+.wd-table th.sorted-asc::after {
+    content: '↑';
+    opacity: 1;
+}
+
+.wd-table th.sorted-desc::after {
+    content: '↓';
+    opacity: 1;
+}
+
+/* Table Body */
+.wd-table td {
+    padding: var(--table-cell-padding);
+    border-bottom: 1px solid var(--table-border);
+    height: var(--table-row-height);
+}
+
+/* Striped Rows */
+.wd-table tbody tr:nth-child(even) {
+    background-color: var(--table-stripe-bg);
+}
+
+/* Row Hover */
+.wd-table tbody tr:hover {
+    background-color: var(--table-row-hover);
+    transition: background-color var(--transition-quick);
+}
+
+/* Action Column */
+.wd-table td.actions {
+    width: var(--table-action-column-width);
+    white-space: nowrap;
+    text-align: right;
+}
+
+/* Action Buttons */
+.wd-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+    margin-left: var(--spacing-xs);
+    border-radius: var(--border-radius-sm);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--transition-quick);
+    position: relative;
+}
+
+.wd-action-btn:hover {
+    transform: translateY(-1px);
+}
+
+.wd-action-btn i {
+    font-size: var(--icon-size-md);
+}
+
+/* Action Button Colors */
+.wd-action-view i { color: var(--action-view); }
+.wd-action-edit i { color: var(--action-edit); }
+.wd-action-delete i { color: var(--action-delete); }
+
+/* Tooltips */
+.wd-action-btn::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--tooltip-bg);
+    color: var(--tooltip-text);
+    font-size: var(--font-size-sm);
+    border-radius: var(--border-radius-sm);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-quick);
+}
+
+.wd-action-btn::after {
+    content: '';
+    position: absolute;
+    bottom: calc(100% - var(--tooltip-arrow-size));
+    left: 50%;
+    transform: translateX(-50%);
+    border: var(--tooltip-arrow-size) solid transparent;
+    border-top-color: var(--tooltip-bg);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-quick);
+}
+
+.wd-action-btn:hover::before,
+.wd-action-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Search/Filter Bar */
+.wd-table-search {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: white;
+    border: 1px solid var(--table-border);
+    border-radius: var(--border-radius-md);
+}
+
+.wd-table-search input {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--input-border);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+}
+
+.wd-table-search input:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 3px var(--input-focus-shadow);
+}
+
+/* Search in Menu */
+.wd-table-search-menu {
+    margin-left: auto;  /* Push to right side of menu */
+    padding: 0 var(--spacing-sm);
+}
+
+.wd-table-search-menu input {
+    padding: 4px 8px;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius-sm);
+    background: white;
+    font-size: var(--font-size-sm);
+    width: 200px;
+}
+
+.wd-table-search-menu input:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 2px rgba(var(--brand-primary-rgb), 0.1);
+}
+
+/* Right-aligned number columns */
+.wd-table td.number,
+.wd-table th.number {
+    text-align: right;
+}

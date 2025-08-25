@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>WD DevTest</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- W3 Schools CSS -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- WorkableData (WD) customization -->
+<link rel="stylesheet" href="/workablework/public/css/variables/public_variables.css">
+<link rel="stylesheet" href="/workablework/public/css/variables/wd_variables.css">
+<link rel="stylesheet" href="/workablework/public/css/wd_grid.css">
+<link rel="stylesheet" href="/workablework/public/css/wd_layout.css">
+<link rel="stylesheet" href="/workablework/public/css/wd_style.css">
+<link rel="stylesheet" href="/workablework/public/css/wd_tables.css">
+<link rel="stylesheet" href="/workablework/public/css/wd_components.css">
+
+<script type="text/javascript" src="../../../js/wd.js"></script>
+</head>
+
+<body class="wd-workspace">
+<div class="wd-container">
+
+<header class="wd-header">
+<div class="wd-header__content">
+<button class="wd-button wd-button-icon w3-hide-large" onclick="w3_open();">
+<i class="fa fa-bars"></i>
+<span class="sr-only">Menu</span>
+</button>
+<div class="wd-header__left">
+<img src="/workablework/public/logo/Logo-01_small.jpg" alt="Workable Data" class="wd-header__logo">
+</div>
+<div class="wd-header__center">
+TESTING TESTING TESTING TESTING </div>
+<div class="wd-header__right">
+Jaco LOCALS <br>
+michaelkuhn </div>
+</div>
+</header>
+
+<!-- Location entity name -->
+<div id="grid_data_locent">
+Jaco LOCALS</div>
+
+<!-- Main menu -->
+<div id="grid_data_locmenu">
+<a class="w3-bar-item w3-button w3-hide-medium w3-hover-white" href="../home/">Home</a>
+<a class="w3-bar-item w3-button w3-hide-medium w3-hover-white" href="../ledger/index.php?thing=ledger">Ledger</a>
+<a class="w3-bar-item w3-button w3-hide-medium w3-hover-white" href="../acctng/">Accounting</a>
+<a class="w3-bar-item w3-button w3-hide-medium w3-hover-white" href="../foodcost/">FoodCost</a>
+<a class="w3-bar-item w3-button w3-hide-medium w3-hover-white" href="../sales/">Sales</a>
+<a class="w3-bar-item w3-button w3-hide-medium w3-hover-white" href="../../../landing/">ChangeLoc</a>
+<a class="w3-bar-item w3-button w3-hide-medium w3-hover-white" href="../../../landing/logout.php">Logout</a>
+</div>
+
+<!-- Sidebar navigation -->
+<nav class="wd-sidebar" style="z-index:3; width:200px;" id="mySidebar">
+<div class="w3-bar-block">
+<a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu">
+<i class="fa fa-remove fa-fw"></i>  Close Menu
+</a>
+<a href="../foodcost/index.php?thing=menu_summary" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Menu Summary</a>
+<a href="../foodcost/index.php?thing=menu_list" class="w3-bar-item w3-button w3-padding"><i class="fa fa-table fa-fw"></i>  Menu Items</a>
+<a href="../foodcost/index.php?thing=menu_map" class="w3-bar-item w3-button w3-padding"><i class="fa fa-plus fa-fw"></i>  Menu With Map</a>
+
+<a href="../foodcost/index.php?thing=comm_list" class="w3-bar-item w3-button w3-padding"><i class="fa fa-table fa-fw"></i>  Commodity</a>
+<a href="../foodcost/index.php?thing=map_list" class="w3-bar-item w3-button w3-padding"><i class="fa fa-table fa-fw"></i>  Recipe Map</a>
+
+<a href="../foodcost/index.php?thing=salesmix" class="w3-bar-item w3-button w3-padding"><i class="fa fa-table fa-fw"></i>  SalesMix</a>
+<hr>
+<a href="../foodcost/index.php?thing=menu_type" class="w3-bar-item w3-button w3-padding"><i class="fa fa-table fa-fw"></i>  Menu Type</a>
+<a href="../foodcost/index.php?thing=menu_group" class="w3-bar-item w3-button w3-padding"><i class="fa fa-table fa-fw"></i>  Menu Group</a>
+<a href="../foodcost/index.php?thing=menu_cat" class="w3-bar-item w3-button w3-padding"><i class="fa fa-table fa-fw"></i>  Menu Category</a>
+<a href="../foodcost/index.php?thing=menu_page" class="w3-bar-item w3-button w3-padding"><i class="fa fa-table fa-fw"></i>  Menu Page</a>
+<hr>
+<a href="../foodcost/index.php?thing=supplier" class="w3-bar-item w3-button w3-padding"><i class="fa fa-table fa-fw"></i>  Supplier</a>
+<a href="../foodcost/index.php?thing=comm_type" class="w3-bar-item w3-button w3-padding"><i class="fa fa-table fa-fw"></i>  Comm Type</a>
+<a href="../foodcost/index.php?thing=comm_uom" class="w3-bar-item w3-button w3-padding"><i class="fa fa-table fa-fw"></i>  Comm UOM</a>
+<hr>
+<a href="../../../landing/" class="w3-bar-item w3-button w3-padding"><i class="fa fa-rotate-left fa-fw"></i>  Change Loc</a>
+<a href="../../../landing/logout.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-arrow-circle-left fa-fw"></i>  Logout</a>
+</div>
+<hr>
+</nav>
+<div class="main-content">
+
+
+
+<!-- Main content area -->
+<div class="wd-grid-work-list-parent-child-action">
+<div class="wd-grid-work-list">
+
+<div class="wd-table-container">
+<table id="tbl_menu_summary" class="wd-table">
+<thead>
+<tr>
+<th>Category</th>
+<th>Group</th>
+<th>Type</th>
+<th>Menu Item</th>
+<th>Menu Page</th>
+<th class="number">Menu Price</th>
+<th class="number no-sort">Actions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Avocado</td>
+<td>Hamburger</td>
+<td class="number">1,000.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=78" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Bacon</td>
+<td>Hamburger</td>
+<td class="number">1,800.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=83" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Bacon Blue Burger</td>
+<td>Hamburger</td>
+<td class="number">8,850.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=71" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Carmelized Onions</td>
+<td>Hamburger</td>
+<td class="number">800.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=80" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Cowboy Burger</td>
+<td>Hamburger</td>
+<td class="number">8,850.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=68" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Extra Patty</td>
+<td>Hamburger</td>
+<td class="number">2,900.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=84" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Extra Pickles</td>
+<td>Hamburger</td>
+<td class="number">800.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=76" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Fish Sandwich</td>
+<td>Hamburger</td>
+<td class="number">7,850.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=73" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Fried Egg</td>
+<td>Hamburger</td>
+<td class="number">700.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=75" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Fried Jalapenos</td>
+<td>Hamburger</td>
+<td class="number">1,000.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=82" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Fried Onions</td>
+<td>Hamburger</td>
+<td class="number">800.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=79" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Fried Pickles</td>
+<td>Hamburger</td>
+<td class="number">1,000.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=77" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Grilled Chicken BLT</td>
+<td>Hamburger</td>
+<td class="number">6,850.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=74" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Jaco Burger</td>
+<td>Hamburger</td>
+<td class="number">7,950.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=72" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Jalapeno Burger</td>
+<td>Hamburger</td>
+<td class="number">7,850.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=67" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Kona Burger</td>
+<td>Hamburger</td>
+<td class="number">8,850.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=70" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Mushroom swiss</td>
+<td>Hamburger</td>
+<td class="number">8,650.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=69" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Sauteed Mushrooms</td>
+<td>Hamburger</td>
+<td class="number">800.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=81" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Shack Burger</td>
+<td>Hamburger</td>
+<td class="number">6,850.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=66" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+<tr>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Burgers</td>
+<td>Simple Cheese Quesadilla</td>
+<td>Main5</td>
+<td class="number">4,900.00</td>
+<td class="actions">
+<a href="index.php?thing=menu_form&id=139" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">
+<i class="fas fa-edit"></i>
+</a>
+<button class="wd-action-btn wd-action-view" data-tooltip="View Details">
+<i class="fas fa-eye"></i>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+<div class="wd-grid-work-parent">
+Parent
+</div>
+
+<div class="wd-grid-work-child">
+Child
+</div>
+
+<div class="wd-grid-work-action">
+Action
+</div>
+
+
+<div class="wd-grid-work-action">
+Action
+</div>
+
+
+</div>
+
+<!-- Footer - Generic Sitewide -->
+
+</div><!-- End of wd-main -->
+<footer class="wd-footer">
+<div class="wd-footer__content">
+<div class="wd-footer__section">
+WD Web Learning
+</div>
+
+<div class="wd-footer__section">
+Site Level Footer - Center
+</div>
+
+<div class="wd-footer__section">
+&copy; 2025 Workable Data
+</div>
+</div>
+</footer>
+</div><!-- End of wd-container -->
+
+
+<!-- Javascript for the page -->
+<script src="../../../js/wd_sidebar_default.js"></script>
+
+<!-- Debug Session Info -->
+<div style="background: #f0f0f0; padding: 10px; margin: 20px; font-family: monospace;">
+<strong>SESSION Debug:</strong><br>
+<pre>Array
+(
+[locent_id] => 11
+[locent_name] => Jaco LOCALS
+[user_username] => michaelkuhn
+[user_first_name] => Michael
+[locent_auth] => all
+[fc_menu_cat] => All
+[fc_menu_group] => All
+[fc_menu_type] => All
+[fc_menu_page] => All
+[fc_menu_name] =>
+[user_id] => 2
+[username] => michaelkuhn
+[fc_menu_criteria] => Array
+(
+[fc_menu_cat_name] => All
+[fc_menu_group_name] => All
+[fc_menu_type_name] => Burgers
+[fc_menu_page] => All
+[fc_menu_name] =>
+)
+
+)
+</pre></div>
+
+</body>
+</html>
