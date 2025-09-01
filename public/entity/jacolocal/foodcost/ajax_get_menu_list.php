@@ -35,6 +35,7 @@ try {
         return [
             'id' => $menu->id,
             'name' => $menu->name,
+            'price' => $menu->price, // Add price here
             'typeName' => $menu->typeName,
             'pageName' => $menu->pageName
         ];

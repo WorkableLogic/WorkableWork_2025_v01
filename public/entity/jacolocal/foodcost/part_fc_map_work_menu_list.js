@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuListContainer = document.getElementById('menu-item-list-container');
     const filterForm = document.getElementById('menu-list-filter-form');
 
+    // Exit if the required elements for this script are not on the page
+    if (!menuListContainer || !filterForm) {
+        return;
+    }
+
     function fetchMenuList() {
         if (!menuListContainer || !filterForm) {
             console.error("WDError: Could not find required elements: 'menu-item-list-container' or 'menu-list-filter-form'.");
@@ -51,8 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
 
             div.addEventListener('click', () => {
-                const event = new CustomEvent('menuItemSelected', { detail: { menuId: item.id } }); // Standardize to menuId
-                document.dispatchEvent(event); // Dispatch globally
+                const event = new CustomEvent('menuItemSelected', { 
+                    detail: { 
+                        menuId: item.id,
+                        menuPrice: item.price // Pass menu price in the event
+                    } 
+                });
+                document.dispatchEvent(event);
 
                 document.querySelectorAll('.menu-list-item').forEach(el => el.classList.remove('selected'));
                 div.classList.add('selected');

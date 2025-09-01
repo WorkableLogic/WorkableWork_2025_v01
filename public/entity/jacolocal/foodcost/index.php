@@ -106,7 +106,7 @@ require_login();
                     $page_part = (strpos($_SERVER['QUERY_STRING'], 'comm_uom_form') !== false) ? 'part_fc_comm_uom_form.php' : 'part_fc_comm_uom_list.php';
                     break;
                 case 'map':
-                    $page_part = $id ? 'part_fc_map_form.php' : 'part_fc_map_list.php';
+                    $page_part = ($id || strpos($_SERVER['QUERY_STRING'], 'map_form') !== false) ? 'part_fc_map_form.php' : 'part_fc_map_list.php';
                     break;
                 case 'map_work':
                     $page_part = 'part_fc_map_work.php';

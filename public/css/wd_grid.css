@@ -238,13 +238,13 @@ height: 150px;
     grid-template-areas:
         "list parent parent"
         "list parent parent"
-        "list parent parent"
         "list child child"
         "list child child"
         "list child child"
         "list child child"
-        "list action action"
-        "list action action";
+        "list child child"
+        "list child child"
+        "list child child";
     grid-template-columns: 30% 40% 30%;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     width:inherit;

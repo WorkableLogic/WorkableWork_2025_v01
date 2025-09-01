@@ -49,15 +49,15 @@ $maps = $mapRepo->findByCriteria($criteria);
         <tbody>
             <?php foreach ($maps as $map) : ?>
                 <tr>
-                    <td><?= htmlspecialchars($map->menuType ?? '') ?></td>
-                    <td><?= htmlspecialchars($map->menuName) ?></td>
-                    <td><?= htmlspecialchars($map->commName) ?></td>
-                    <td class="number"><?= number_format($map->fc_map_amount, 2) ?></td>
-                    <td><?= htmlspecialchars($map->commUom ?? '') ?></td>
-                    <td class="number"><?= number_format($map->commCostUom ?? 0, 2) ?></td>
-                    <td class="number"><?= number_format($map->mapCostExtend ?? 0, 2) ?></td>
+                    <td><?= htmlspecialchars($map->getMenuType() ?? '') ?></td>
+                    <td><?= htmlspecialchars($map->getMenuName()) ?></td>
+                    <td><?= htmlspecialchars($map->getCommName()) ?></td>
+                    <td class="number"><?= number_format($map->getAmount(), 2) ?></td>
+                    <td><?= htmlspecialchars($map->getUom() ?? '') ?></td>
+                    <td class="number"><?= number_format($map->getCostPerUom() ?? 0, 2) ?></td>
+                    <td class="number"><?= number_format($map->getCostExtend() ?? 0, 2) ?></td>
                     <td class="actions">
-                        <a href="index.php?thing=map_form&id=<?= $map->fc_map_id ?>" class="wd-action-btn wd-action-edit" data-tooltip="Edit Mapping">
+                        <a href="index.php?thing=map_form&id=<?= $map->getId() ?>" class="wd-action-btn wd-action-edit" data-tooltip="Edit Mapping">
                             <i class="fas fa-edit"></i>
                         </a>
                     </td>

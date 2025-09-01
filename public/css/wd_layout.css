@@ -97,3 +97,22 @@
 .wd-footer__section:last-child {
     text-align: right;
 }
+
+/* Add styles for the new ingredient summary section */
+.wd-child-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust as needed */
+    position: relative; /* Needed for absolute positioning of the summary */
+}
+
+.ingredient-summary {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333; /* Or your preferred color */
+    position: absolute;
+    left: 60%;
+    top: 50%;
+    transform: translateY(-50%);
+}

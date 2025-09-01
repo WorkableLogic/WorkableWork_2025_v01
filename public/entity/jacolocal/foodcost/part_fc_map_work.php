@@ -13,12 +13,12 @@
         <?php include 'part_fc_map_work_child_list.php'; ?>
     </div>
 
-    <div class="wd-grid-work-action">
+    <!-- <div class="wd-grid-work-action">
         <p>Actions:</p>
         <div id="action-form-container">
-            <!-- Content will be loaded here by JavaScript -->
+                Content will be loaded here by JavaScript
             <p class="wd-placeholder-text">Select a menu item to manage its ingredients.</p>
         </div>
-    </div>
+    </div> -->
 
 </div>

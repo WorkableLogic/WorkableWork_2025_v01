@@ -56,6 +56,7 @@ $filters = $session->getFcMenuCriteria();
                   <td><?= htmlspecialchars($menu->groupName) ?></td>
                   <td><?= htmlspecialchars($menu->typeName) ?></td>
                   <td><?= htmlspecialchars($menu->name) ?></td>
+                  <td><?= htmlspecialchars($menu->pageName) ?></td>
                   <td>$<?= number_format($menu->price, 2) ?></td>
                   <td class="actions">
                      <a href="index.php?thing=menu_form&id=<?= htmlspecialchars($menu->id) ?>" class="wd-action-btn wd-action-edit" data-tooltip="Edit Menu Item">

@@ -9,18 +9,18 @@ if (is_post_request()) {
     $repo = new FcMapRepository();
     $id = $_POST['fc_map_id'] ?? null;
 
-    // Create a DTO with the full field names from the form post
+    // Create a DTO with the correct named arguments for the constructor
     $map = new FcMapDTO(
-        fc_map_id: $id,
-        menuType: '', 
-        fc_map_menu: (int)$_POST['fc_map_menu'],
-        menuName: '', 
-        fc_map_comm: (int)$_POST['fc_map_comm'],
-        commName: '', 
-        fc_map_amount: (float)$_POST['fc_map_amount'],
-        commUom: '', 
-        commCostUom: 0, 
-        mapCostExtend: 0
+        id: $id ? (int)$id : null,
+        menuType: '', // Not needed for create/update
+        menuId: (int)$_POST['fc_map_menu'],
+        menuName: '', // Not needed for create/update
+        commId: (int)$_POST['fc_map_comm'],
+        commName: '', // Not needed for create/update
+        amount: (float)$_POST['fc_map_amount'],
+        uom: '', // Not needed for create/update
+        costPerUom: 0, // Not needed for create/update
+        costExtend: 0  // Not needed for create/update
     );
 
     if ($id) {

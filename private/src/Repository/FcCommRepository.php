@@ -99,6 +99,21 @@ class FcCommRepository {
         return $stmt->execute([':id' => $id]);
     }
 
+    public function findAllForDropdown(): array
+    {
+        $sql = "
+            SELECT 
+                fc_comm_id as id, 
+                fc_comm_name as name,
+                fc_comm_uom as uom,
+                ROUND(fc_comm_cost_gross / fc_comm_convert, 2) as cost_per_uom
+            FROM fc_comm 
+            ORDER BY fc_comm_name ASC
+        ";
+        $stmt = $this->db->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     private function rowToDTO(array $row): FcCommDTO
     {
         return new FcCommDTO(
