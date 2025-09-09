@@ -1,7 +1,8 @@
 <?php
 require_once('../../private/config/initialize.php');
 
-use App\Repository\UserRepository;
+use App\Repository\AdminUserRepository;
+use App\Database;
 
 $errors = [];
 $username = '';
@@ -20,10 +21,16 @@ if(is_post_request()) {
     }
 
     if(empty($errors)) {
-        $userRepository = new UserRepository();
-        $user = $userRepository->findByUsername($username);
+        $adminUserRepository = new AdminUserRepository();
+        $user = $adminUserRepository->findByUsername($username);
 
-        if($user && password_verify($password, $user->hashedPassword)) {
+        if ($user) {
+            echo "<script>console.log('Fetched user: " . json_encode($user) . "');</script>";
+            echo "<script>console.log('Entered password: " . $password . "');</script>";
+            echo "<script>console.log('Stored hashed password: " . $user->getUserHashedPassword() . "');</script>";
+        }
+
+        if($user && password_verify($password, $user->getUserHashedPassword())) {
             $session->login($user);
             redirect_to(url_for('/landing/index.php'));
         } else {

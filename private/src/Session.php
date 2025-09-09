@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\DTO\UserDTO;
+use App\DTO\AdminUserDTO;
 
 class Session {
 
@@ -12,10 +12,10 @@ class Session {
         }
     }
 
-    public function login(UserDTO $user): void {
+    public function login(AdminUserDTO $user): void {
         session_regenerate_id();
-        $_SESSION['user_id'] = $user->id;
-        $_SESSION['username'] = $user->username;
+        $_SESSION['user_id'] = $user->getUserId();
+        $_SESSION['username'] = $user->getUserUsername();
     }
 
     public function isLoggedIn(): bool {
